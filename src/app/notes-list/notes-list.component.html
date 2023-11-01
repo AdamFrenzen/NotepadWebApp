@@ -1,5 +1,5 @@
 <ul>
-  <li *ngFor="let note of notes">
+  <li *ngFor="let note of notes; index as i" [ngClass]="{ 'selected': selected === i }" (click)="selected = i">
     {{ note.name }}
   </li>
 </ul>
