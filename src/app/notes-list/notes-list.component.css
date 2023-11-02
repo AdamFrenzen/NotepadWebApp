@@ -6,8 +6,16 @@ ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
-  border-right: 1px solid black;
   height: 100%;
+}
+
+span {
+  text-align: center;
+}
+
+h1 {
+  padding: 5px;
+  margin: 0;
 }
 
 li {
@@ -21,5 +29,5 @@ li:hover:not(.selected) {
 
 .selected {
   color: white;
-  background-color: #0080ff;
+  background-color: #1b8eff;
 }

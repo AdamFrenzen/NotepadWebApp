@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class NotesListComponent {
 
-  public selected: number | null = 1
+  public selected: number | null = null
 
   notes = [{
     name: 'note1'
@@ -18,4 +18,9 @@ export class NotesListComponent {
   }, {
     name: 'note4'
   },]
+
+  addNote() {
+    this.notes.push({name: 'new'})
+  }
+
 }

@@ -1,5 +1,8 @@
+<h1>Note Pad</h1>
+
 <ul>
   <li *ngFor="let note of notes; index as i" [ngClass]="{ 'selected': selected === i }" (click)="selected = i">
     {{ note.name }}
   </li>
+  <span (click)="addNote()">+</span>
 </ul>
