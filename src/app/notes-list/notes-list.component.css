@@ -1,4 +1,17 @@
-html {
+aside {
+  width: 200px;
+  height: 100%;
+  border-right: 1px solid black;
+  display: flex;
+  flex-direction: column;
+}
+
+.closed {
+  display: none;
+}
+
+h1 {
+  padding: 10px;
   margin: 0;
 }
 
@@ -7,15 +20,6 @@ ul {
   padding: 0;
   margin: 0;
   height: 100%;
-}
-
-span {
-  text-align: center;
-}
-
-h1 {
-  padding: 5px;
-  margin: 0;
 }
 
 li {
@@ -30,4 +34,20 @@ li:hover:not(.selected) {
 .selected {
   color: white;
   background-color: #1b8eff;
+}
+
+.center {
+  text-align: center;
+  margin-top: 10px
+}
+
+.center span {
+  padding: 5px 10px;
+  margin: auto
+}
+
+.center span:hover {
+  border-radius: 8px;
+  background-color: #ececec;
+  cursor: pointer;
 }

@@ -1,8 +1,13 @@
-<h1>Note Pad</h1>
+<aside [ngClass]="{'closed': !open}">
+  <h1>Note Pad</h1>
 
-<ul>
-  <li *ngFor="let note of notes; index as i" [ngClass]="{ 'selected': selected === i }" (click)="selected = i">
-    {{ note.name }}
-  </li>
-  <span (click)="addNote()">+</span>
-</ul>
+  <ul>
+    <li *ngFor="let note of notes; index as i" [ngClass]="{ 'selected': selected === i }" (click)="selected = i">
+      {{ note.name }}
+    </li>
+
+    <div class="center">
+      <span (click)="addNote()">+ new note</span>
+    </div>
+  </ul>
+</aside>

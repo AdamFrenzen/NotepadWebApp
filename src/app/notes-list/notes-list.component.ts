@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {CommunicatorService} from "../communicator.service";
 
 @Component({
   selector: 'app-notes-list',
@@ -6,10 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./notes-list.component.css']
 })
 export class NotesListComponent {
-
+  public open = true
   public selected: number | null = null
 
-  notes = [{
+  public notes = [{
     name: 'note1'
   }, {
     name: 'note2'
@@ -18,6 +19,12 @@ export class NotesListComponent {
   }, {
     name: 'note4'
   },]
+
+  constructor(private communicator: CommunicatorService) {
+    this.communicator.getAsideOpen().subscribe((res) => {
+      this.open = res;
+    });
+  }
 
   addNote() {
     this.notes.push({name: 'new'})
