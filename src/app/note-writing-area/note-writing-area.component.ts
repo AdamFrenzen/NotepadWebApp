@@ -1,4 +1,10 @@
 import { Component } from '@angular/core';
+import {CommunicatorService} from "../communicator.service";
+
+type note = {
+  name: string;
+  content: string;
+}
 
 @Component({
   selector: 'app-note-writing-area',
@@ -6,5 +12,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./note-writing-area.component.css']
 })
 export class NoteWritingAreaComponent {
+  selectedNote: note | null  = null
 
+  constructor(private communicator: CommunicatorService) {
+    this.communicator.getSelectedNote().subscribe((res) => {
+      this.selectedNote = res
+    })
+  }
 }

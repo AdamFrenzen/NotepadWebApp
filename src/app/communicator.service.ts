@@ -5,17 +5,27 @@ import {Subject} from "rxjs";
   providedIn: 'root'
 })
 export class CommunicatorService {
-  currentAsideOpen = true
-  asideOpen: Subject<boolean> = new Subject<boolean>();
-  constructor() { }
+  private currentAsideOpen = true;
+  public asideOpen: Subject<boolean> = new Subject<boolean>();
+
+  // TODO: Adjust type any when a note type is decided
+  public selectedNoteId: Subject<any> = new Subject<any>();
 
   toggleAsideOpen() {
-    this.currentAsideOpen = ! this.currentAsideOpen
+    this.currentAsideOpen = ! this.currentAsideOpen;
     this.asideOpen.next(this.currentAsideOpen);
   }
 
   getAsideOpen() {
     return this.asideOpen;
+  }
+
+  setSelectedNote(note: any) {
+    this.selectedNoteId.next(note);
+  }
+
+  getSelectedNote() {
+    return this.selectedNoteId;
   }
 
 }
