@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { NotesListComponent } from './notes-list/notes-list.component';
 import { NoteWritingAreaComponent } from './note-writing-area/note-writing-area.component';
 import { HeaderComponent } from './header/header.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -13,9 +14,10 @@ import { HeaderComponent } from './header/header.component';
     NoteWritingAreaComponent,
     HeaderComponent
   ],
-  imports: [
-    BrowserModule
-  ],
+    imports: [
+        BrowserModule,
+        FormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

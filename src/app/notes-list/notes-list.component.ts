@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {CommunicatorService} from "../communicator.service";
 
 @Component({
@@ -6,9 +6,9 @@ import {CommunicatorService} from "../communicator.service";
   templateUrl: './notes-list.component.html',
   styleUrls: ['./notes-list.component.css']
 })
-export class NotesListComponent {
+export class NotesListComponent implements OnInit {
   public open = true
-  public selected: number | null = null
+  public selected: number = 0
 
   public notes = [{
     name: 'note1',
@@ -28,6 +28,10 @@ export class NotesListComponent {
     this.communicator.getAsideOpen().subscribe((res) => {
       this.open = res;
     });
+  }
+
+  ngOnInit() {
+    this.select(this.selected);
   }
 
   select(id: number) {
