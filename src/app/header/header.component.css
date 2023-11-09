@@ -17,10 +17,27 @@
 }
 
 p {
+  width: 100%;
   margin: 0;
   padding: 8px 5px 5px 10px
 }
 
 svg {
   width: 20px;
+}
+.right {
+  width:90%;
+}
+.button {
+  padding: 0px 10px;
+  background-color: #1b8eff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  float: right;
+  height: 100%;
+  cursor: pointer;
+}
+.button:active {
+  background-color: #1a7fe1;
 }

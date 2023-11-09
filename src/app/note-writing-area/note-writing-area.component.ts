@@ -4,6 +4,7 @@ import {CommunicatorService} from "../communicator.service";
 type note = {
   name: string;
   content: string;
+  id: number;
 }
 
 @Component({
